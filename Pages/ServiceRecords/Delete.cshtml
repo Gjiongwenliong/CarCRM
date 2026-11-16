@@ -1,0 +1,34 @@
+@page "{id:int}"
+@model CarCRM.Pages.ServiceRecords.DeleteModel
+
+<h2>Delete Service Record</h2>
+
+<h4>Are you sure you want to delete this service record?</h4>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Car</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Car.DisplayName</dd>
+
+        <dt class="col-sm-3">Maintenance Item</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.MaintenanceItem.Name</dd>
+
+        <dt class="col-sm-3">Service Date</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.ServiceDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Mileage</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Mileage</dd>
+
+        <dt class="col-sm-3">Cost</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Cost</dd>
+
+        <dt class="col-sm-3">Remarks</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Remarks</dd>
+    </dl>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="ServiceRecord.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>

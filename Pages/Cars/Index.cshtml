@@ -1,0 +1,36 @@
+@page
+@model CarCRM.Pages.Cars.IndexModel
+
+<h1>Cars</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Car</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Plate Number</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var car in Model.Cars)
+    {
+        <tr>
+            <td>@car.PlateNumber</td>
+            <td>@car.Brand</td>
+            <td>@car.Model</td>
+            <td>@car.Year</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@car.Id">Edit</a> |
+                <a asp-page="Details" asp-route-id="@car.Id">Details</a> |
+                <a asp-page="Delete" asp-route-id="@car.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+@page "{id:int}"
+@model CarCRM.Pages.MaintenanceItems.DetailsModel
+
+<h1>Maintenance Item Details</h1>
+
+<div>
+    <h4>@Model.MaintenanceItem.Name</h4>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3">Interval Mileage</dt>
+        <dd class="col-sm-9">@Model.MaintenanceItem.IntervalMileage</dd>
+
+        <dt class="col-sm-3">Interval Months</dt>
+        <dd class="col-sm-9">@Model.MaintenanceItem.IntervalMonths</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-page="./Edit" asp-route-id="@Model.MaintenanceItem.Id" class="btn btn-warning">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.MaintenanceItem.Id" class="btn btn-danger">Delete</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</p>
+

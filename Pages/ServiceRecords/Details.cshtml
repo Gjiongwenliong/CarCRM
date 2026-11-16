@@ -1,0 +1,32 @@
+@page "{id:int}"
+@model CarCRM.Pages.ServiceRecords.DetailsModel
+
+<h2>Service Record Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Car</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Car.DisplayName</dd>
+
+        <dt class="col-sm-3">Maintenance Item</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.MaintenanceItem.Name</dd>
+
+        <dt class="col-sm-3">Service Date</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.ServiceDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Mileage</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Mileage</dd>
+
+        <dt class="col-sm-3">Cost</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Cost</dd>
+
+        <dt class="col-sm-3">Remarks</dt>
+        <dd class="col-sm-9">@Model.ServiceRecord.Remarks</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-page="./Edit" asp-route-id="@Model.ServiceRecord.Id" class="btn btn-warning">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.ServiceRecord.Id" class="btn btn-danger">Delete</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</p>

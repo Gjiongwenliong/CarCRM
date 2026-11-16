@@ -1,0 +1,39 @@
+@page
+@model CarCRM.Pages.MaintenanceItems.CreateModel
+
+<h1>Create Maintenance Item</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="MaintenanceItem.Name"></label>
+        <input asp-for="MaintenanceItem.Name" class="form-control" />
+        <span asp-validation-for="MaintenanceItem.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MaintenanceItem.RawCost"></label>
+        <input asp-for="MaintenanceItem.RawCost" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="MaintenanceItem.RawCost" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MaintenanceItem.HumanCost"></label>
+        <input asp-for="MaintenanceItem.HumanCost" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="MaintenanceItem.HumanCost" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MaintenanceItem.IntervalMileage"></label>
+        <input asp-for="MaintenanceItem.IntervalMileage" class="form-control" />
+        <span asp-validation-for="MaintenanceItem.IntervalMileage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MaintenanceItem.IntervalMonths"></label>
+        <input asp-for="MaintenanceItem.IntervalMonths" class="form-control" />
+        <span asp-validation-for="MaintenanceItem.IntervalMonths" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</form>

@@ -1,0 +1,31 @@
+@page "{id:int}"
+@model CarCRM.Pages.MaintenanceItems.DeleteModel
+
+<h1>Delete Maintenance Item</h1>
+
+<h3>Are you sure you want to delete this item?</h3>
+
+@if (Model.MaintenanceItem is null)
+{
+    <p>Maintenance item not found.</p>
+}
+else
+{
+    <div>
+        <h4>@Model.MaintenanceItem.Name</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Interval Mileage</dt>
+            <dd class="col-sm-10">@Model.MaintenanceItem.IntervalMileage</dd>
+
+            <dt class="col-sm-2">Interval Months</dt>
+            <dd class="col-sm-10">@Model.MaintenanceItem.IntervalMonths</dd>
+        </dl>
+    </div>
+
+    <form method="post">
+        <input type="hidden" asp-for="MaintenanceItem.Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+    </form>
+}

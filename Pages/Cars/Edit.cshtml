@@ -1,0 +1,33 @@
+@page "{id:int}"
+@model CarCRM.Pages.Cars.EditModel
+
+<h1>Edit Car</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Car.PlateNumber"></label>
+        <input asp-for="Car.PlateNumber" class="form-control" />
+        <span asp-validation-for="Car.PlateNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Car.Brand"></label>
+        <input asp-for="Car.Brand" class="form-control" />
+        <span asp-validation-for="Car.Brand" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Car.Model"></label>
+        <input asp-for="Car.Model" class="form-control" />
+        <span asp-validation-for="Car.Model" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Car.Year"></label>
+        <input asp-for="Car.Year" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+    <input type="hidden" asp-for="Car.Id" />
+</form>

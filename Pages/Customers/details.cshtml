@@ -1,0 +1,25 @@
+@page "{id:int?}"
+@model CarCRM.Pages.Customers.DetailsModel
+
+<h2>Customer Details</h2>
+
+@if (Model.Customer is null)
+{
+    <div class="alert alert-warning">Customer not found.</div>
+}
+else
+{
+    <div class="mb-3">
+        <strong>Name:</strong> @Model.Customer.Name
+    </div>
+
+    <div class="mb-3">
+        <strong>Phone:</strong> @Model.Customer.Phone
+    </div>
+
+    <div class="mb-3">
+        <strong>Email:</strong> @Model.Customer.Email
+    </div>
+}
+
+<a asp-page="./index" class="btn btn-secondary">Back to List</a>

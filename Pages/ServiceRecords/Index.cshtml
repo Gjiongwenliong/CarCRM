@@ -1,0 +1,40 @@
+@page
+@model CarCRM.Pages.ServiceRecords.IndexModel
+
+<h1>Service Records</h1>
+
+<p>
+    <a asp-page="./Create" class="btn btn-primary">Create New Service Record</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Car</th>
+            <th>Maintenance Item</th>
+            <th>Service Date</th>
+            <th>Mileage</th>
+            <th>Cost</th>
+            <th>Remarks</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.ServiceRecords)
+    {
+        <tr>
+            <td>@item.Car.DisplayName</td>
+            <td>@item.MaintenanceItem.Name</td>
+            <td>@item.ServiceDate.ToShortDateString()</td>
+            <td>@item.Mileage</td>
+            <td>@item.Cost</td>
+            <td>@item.Remarks</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

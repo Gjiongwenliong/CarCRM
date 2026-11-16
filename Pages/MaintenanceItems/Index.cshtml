@@ -1,0 +1,39 @@
+@page
+@model CarCRM.Pages.MaintenanceItems.IndexModel
+
+@{
+    ViewData["Title"] = "Maintenance Items";
+}
+
+<h1>Maintenance Items</h1>
+
+<p>
+    <a asp-page="./Create" class="btn btn-primary">Create New Maintenance Item</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Interval Mileage</th>
+            <th>Interval Months</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MaintenanceItems)
+{
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.IntervalMileage</td>
+            <td>@item.IntervalMonths</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

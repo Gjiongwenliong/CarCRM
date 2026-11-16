@@ -1,0 +1,38 @@
+@page
+@model CarCRM.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h1>Customers</h1>
+
+<p>
+    <a asp-page="./create" class="btn btn-primary">Create New Customer</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var customer in Model.Customers)
+{
+        <tr>
+            <td>@customer.Name</td>
+            <td>@customer.Phone</td>
+            <td>@customer.Email</td>
+            <td>
+                <a asp-page="./edit" asp-route-id="@customer.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-page="./delete" asp-route-id="@customer.Id" class="btn btn-sm btn-danger">Delete</a>
+                <a asp-page="./details" asp-route-id="@customer.Id" class="btn btn-sm btn-info">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

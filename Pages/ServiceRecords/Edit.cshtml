@@ -1,0 +1,42 @@
+@page "{id:int}"
+@model CarCRM.Pages.ServiceRecords.EditModel
+
+<h2>Edit Service Record</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ServiceRecord.Id" />
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.CarId"></label>
+        <select asp-for="ServiceRecord.CarId" asp-items="Model.CarList" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.MaintenanceItemId"></label>
+        <select asp-for="ServiceRecord.MaintenanceItemId" asp-items="Model.MaintenanceItemList" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.ServiceDate"></label>
+        <input asp-for="ServiceRecord.ServiceDate" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.Mileage"></label>
+        <input asp-for="ServiceRecord.Mileage" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.Cost"></label>
+        <input asp-for="ServiceRecord.Cost" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceRecord.Remarks"></label>
+        <textarea asp-for="ServiceRecord.Remarks" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</form>

@@ -1,0 +1,49 @@
+@page
+@model CarCRM.Pages.Customers.CreateModel
+
+@{
+	ViewData["Title"] = "Create Customer";
+}
+
+<h1>Create Customer</h1>
+
+<h4>Customer</h4>
+<hr />
+<div>
+	<div>
+		<div class="row">
+			<div class="col-md-6">
+				<form method="post">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+					<div class="form-group mb-3">
+						<label asp-for="Customer.Name" class="control-label"></label>
+						<input asp-for="Customer.Name" class="form-control" />
+						<span asp-validation-for="Customer.Name" class="text-danger"></span>
+					</div>
+
+					<div class="form-group mb-3">
+						<label asp-for="Customer.Phone" class="control-label"></label>
+						<input asp-for="Customer.Phone" class="form-control" />
+						<span asp-validation-for="Customer.Phone" class="text-danger"></span>
+					</div>
+
+					<div class="form-group mb-3">
+						<label asp-for="Customer.Email" class="control-label"></label>
+						<input asp-for="Customer.Email" class="form-control" />
+						<span asp-validation-for="Customer.Email" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<input type="submit" value="Create" class="btn btn-primary" />
+						<a asp-page="./index" class="btn btn-secondary ms-2">Back to List</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
