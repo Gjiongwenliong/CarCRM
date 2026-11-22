@@ -5,6 +5,13 @@
 
 <form method="post">
     <div class="form-group">
+        <label asp-for="Car.IdCustomer">Customer</label>
+        <select asp-for="Car.IdCustomer" asp-items="Model.CustomerList" class="form-control">
+            <option value="">-- Not assigned --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
         <label asp-for="Car.PlateNumber"></label>
         <input asp-for="Car.PlateNumber" class="form-control" />
         <span asp-validation-for="Car.PlateNumber" class="text-danger"></span>

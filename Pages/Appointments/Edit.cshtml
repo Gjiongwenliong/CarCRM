@@ -1,0 +1,50 @@
+@page "{id:int}"
+@model CarCRM.Pages.Appointments.EditModel
+
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<h1>Edit Appointment</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Appointment.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Appointment.CustomerId" class="form-label">Customer</label>
+        <select asp-for="Appointment.CustomerId" asp-items="Model.CustomerList" class="form-control"></select>
+        <span asp-validation-for="Appointment.CustomerId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Appointment.MaintenanceItemId" class="form-label">Maintenance Item</label>
+        <select asp-for="Appointment.MaintenanceItemId" asp-items="Model.MaintenanceItemList" class="form-control">
+            <option value="">-- Not assigned --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Appointment.DueDate" class="form-label"></label>
+        <input asp-for="Appointment.DueDate" type="date" class="form-control" />
+        <span asp-validation-for="Appointment.DueDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="Appointment.IsCompleted" class="form-check-input" />
+        <label asp-for="Appointment.IsCompleted" class="form-check-label">Completed</label>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Appointment.Remark" class="form-label"></label>
+        <textarea asp-for="Appointment.Remark" class="form-control"></textarea>
+        <span asp-validation-for="Appointment.Remark" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

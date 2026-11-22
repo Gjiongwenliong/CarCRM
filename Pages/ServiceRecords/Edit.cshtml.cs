@@ -43,6 +43,18 @@ public class EditModel(CarCRMContext context) : PageModel
             return Page();
         }
 
+        var selectedCar = await _context.Cars
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Id == ServiceRecord.CarId);
+
+        if (selectedCar == null)
+        {
+            ModelState.AddModelError("ServiceRecord.CarId", "Please select a valid car.");
+            await LoadSelectListsAsync();
+            return Page();
+        }
+
+        ServiceRecord.IdCustomer = selectedCar.IdCustomer;
         _context.Attach(ServiceRecord).State = EntityState.Modified;
 
         try
@@ -65,12 +77,16 @@ public class EditModel(CarCRMContext context) : PageModel
 
     private async Task LoadSelectListsAsync()
     {
-        var cars = await _context.Cars.ToListAsync();
+        var cars = await _context.Cars
+            .Include(c => c.Customer)
+            .ToListAsync();
         CarList = new SelectList(
             cars.Select(c => new
             {
                 c.Id,
-                Display = c.DisplayName
+                Display = c.Customer == null
+                    ? c.DisplayName
+                    : $"{c.DisplayName} - {c.Customer.Name}"
             }),
             "Id",
             "Display",

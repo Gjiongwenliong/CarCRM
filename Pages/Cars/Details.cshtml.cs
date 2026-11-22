@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using CarCRM.Data;
 using CarCRM.Models;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarCRM.Pages.Cars
 {
@@ -19,7 +20,9 @@ namespace CarCRM.Pages.Cars
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            Car = await _context.Cars.FindAsync(id);
+            Car = await _context.Cars
+                .Include(c => c.Customer)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (Car == null)
             {

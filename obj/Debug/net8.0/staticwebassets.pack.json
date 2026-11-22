@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/c2678/project/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
       "Id": "/home/c2678/project/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

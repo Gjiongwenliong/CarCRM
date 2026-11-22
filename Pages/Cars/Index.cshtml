@@ -10,6 +10,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Customer</th>
             <th>Plate Number</th>
             <th>Brand</th>
             <th>Model</th>
@@ -21,6 +22,7 @@
     @foreach (var car in Model.Cars)
     {
         <tr>
+            <td>@(car.Customer?.Name ?? "Not assigned")</td>
             <td>@car.PlateNumber</td>
             <td>@car.Brand</td>
             <td>@car.Model</td>

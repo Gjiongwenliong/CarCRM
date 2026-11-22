@@ -1,0 +1,28 @@
+@page "{id:int}"
+@model CarCRM.Pages.Appointments.DetailsModel
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<h1>Appointment Details</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Customer</dt>
+    <dd class="col-sm-9">@Model.Appointment.Customer?.Name</dd>
+
+    <dt class="col-sm-3">Maintenance Item</dt>
+    <dd class="col-sm-9">@(Model.Appointment.MaintenanceItem?.Name ?? "Not assigned")</dd>
+
+    <dt class="col-sm-3">Due Date</dt>
+    <dd class="col-sm-9">@Model.Appointment.DueDate.ToShortDateString()</dd>
+
+    <dt class="col-sm-3">Completed</dt>
+    <dd class="col-sm-9">@(Model.Appointment.IsCompleted ? "Yes" : "No")</dd>
+
+    <dt class="col-sm-3">Remark</dt>
+    <dd class="col-sm-9">@Model.Appointment.Remark</dd>
+</dl>
+
+<a asp-page="./Edit" asp-route-id="@Model.Appointment.Id" class="btn btn-warning">Edit</a>
+<a asp-page="./Index" class="btn btn-secondary">Back to List</a>

@@ -20,7 +20,9 @@ namespace CarCRM.Pages.Cars
 
         public async Task OnGetAsync()
         {
-            Cars = await _context.Set<Car>().ToListAsync();
+            Cars = await _context.Cars
+                .Include(c => c.Customer)
+                .ToListAsync();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R6QeZfjyU1Bn9vHB5cGke3Gm2hB0u+8+SnpGTe7Jbzg=",
+  "Hash": "PAsJ9BDoUCs9KqLSSSjnhkn+hFqBZpMbOnR20r+TRnc=",
   "Source": "CarCRM",
   "BasePath": "_content/CarCRM",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/c2678/project/wwwroot/index.html",
+      "SourceId": "CarCRM",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/c2678/project/wwwroot/",
+      "BasePath": "_content/CarCRM",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
     },
     {
       "Identity": "/home/c2678/project/wwwroot/js/site.js",

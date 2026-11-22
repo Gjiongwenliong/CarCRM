@@ -1,0 +1,41 @@
+@page
+@model CarCRM.Pages.Appointments.IndexModel
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h1>Appointments</h1>
+
+<p>
+    <a asp-page="./Create" class="btn btn-primary">Create New Appointment</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Maintenance Item</th>
+            <th>Due Date</th>
+            <th>Completed</th>
+            <th>Remark</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var appointment in Model.Appointments)
+    {
+        <tr>
+            <td>@appointment.Customer?.Name</td>
+            <td>@(appointment.MaintenanceItem?.Name ?? "Not assigned")</td>
+            <td>@appointment.DueDate.ToShortDateString()</td>
+            <td>@(appointment.IsCompleted ? "Yes" : "No")</td>
+            <td>@appointment.Remark</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@appointment.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-page="./Details" asp-route-id="@appointment.Id" class="btn btn-sm btn-info">Details</a>
+                <a asp-page="./Delete" asp-route-id="@appointment.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CarCRM.Data;
 using CarCRM.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarCRM.Pages.Cars
 {
@@ -22,8 +24,11 @@ namespace CarCRM.Pages.Cars
             Model = string.Empty
         };
 
-        public IActionResult OnGet()
+        public SelectList CustomerList { get; set; } = default!;
+
+        public async Task<IActionResult> OnGetAsync()
         {
+            await LoadCustomerListAsync();
             return Page();
         }
 
@@ -31,6 +36,7 @@ namespace CarCRM.Pages.Cars
         {
             if (!ModelState.IsValid)
             {
+                await LoadCustomerListAsync();
                 return Page();
             }
 
@@ -38,6 +44,16 @@ namespace CarCRM.Pages.Cars
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        private async Task LoadCustomerListAsync()
+        {
+            CustomerList = new SelectList(
+                await _context.Customers
+                    .Select(c => new { c.Id, Name = c.Name ?? "Unknown customer" })
+                    .ToListAsync(),
+                "Id",
+                "Name");
         }
     }
 }

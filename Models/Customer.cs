@@ -19,5 +19,7 @@ namespace CarCRM.Models
 
         public ICollection<Vehicle>? Vehicles { get; set; }
         public ICollection<Appointment>? Appointments { get; set; }
+        public ICollection<Car>? Cars { get; set; }
+        public ICollection<ServiceRecord>? ServiceRecords { get; set; }
     }
 }

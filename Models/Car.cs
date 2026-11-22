@@ -1,8 +1,16 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CarCRM.Models;
 
 public class Car
 {
     public int Id { get; set; }
+
+    public int? IdCustomer { get; set; }
+
+    [ForeignKey(nameof(IdCustomer))]
+    public Customer? Customer { get; set; }
 
     [Required]
     [StringLength(20)]
