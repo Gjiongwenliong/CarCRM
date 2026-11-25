@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using CarCRM.Data;
 using CarCRM.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarCRM.Pages.Cars
 {
@@ -19,6 +20,8 @@ namespace CarCRM.Pages.Cars
         [BindProperty]
         public Car Car { get; set; } = default!;
 
+        public SelectList CustomerList { get; set; } = default!;
+
         public async Task<IActionResult> OnGetAsync(int id)
         {
             var car = await _context.Cars.FindAsync(id);
@@ -29,6 +32,7 @@ namespace CarCRM.Pages.Cars
             }
 
             Car = car;
+            await LoadCustomerListAsync();
             return Page();
         }
 
@@ -36,6 +40,7 @@ namespace CarCRM.Pages.Cars
         {
             if (!ModelState.IsValid)
             {
+                await LoadCustomerListAsync();
                 return Page();
             }
 
@@ -58,6 +63,17 @@ namespace CarCRM.Pages.Cars
             }
 
             return RedirectToPage("Index");
+        }
+
+        private async Task LoadCustomerListAsync()
+        {
+            CustomerList = new SelectList(
+                await _context.Customers
+                    .Select(c => new { c.Id, Name = c.Name ?? "Unknown customer" })
+                    .ToListAsync(),
+                "Id",
+                "Name",
+                Car.IdCustomer);
         }
     }
 }

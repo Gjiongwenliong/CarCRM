@@ -1,10 +1,82 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Main Menu";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="mb-4">
+    <h1 class="display-5">CarCRM</h1>
+    <p class="text-muted mb-0">Main Menu</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Customers</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/Customers/index">Customer CRUD</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Cars</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/Cars/Index">Car CRUD</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Maintenance Items</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/MaintenanceItems/Index">Manage Maintenance Items</a></li>
+                    <li>Engine Oil</li>
+                    <li>Tire</li>
+                    <li>Battery</li>
+                    <li>Air Filter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Service Records</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/ServiceRecords/Index">Customer maintenance history</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Appointments</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/Appointments/Index">Reminder schedule</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title mb-3">Reports</h2>
+                <ul class="mb-0">
+                    <li><a asp-page="/Reports/Index">Statistics</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

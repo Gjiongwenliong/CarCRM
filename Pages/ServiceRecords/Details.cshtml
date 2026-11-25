@@ -5,6 +5,9 @@
 
 <div>
     <dl class="row">
+        <dt class="col-sm-3">Customer</dt>
+        <dd class="col-sm-9">@(Model.ServiceRecord.Customer?.Name ?? Model.ServiceRecord.Car.Customer?.Name ?? "Not assigned")</dd>
+
         <dt class="col-sm-3">Car</dt>
         <dd class="col-sm-9">@Model.ServiceRecord.Car.DisplayName</dd>
 

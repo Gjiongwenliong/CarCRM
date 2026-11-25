@@ -15,6 +15,8 @@ public class IndexModel(CarCRMContext context) : PageModel
     {
         ServiceRecords = await _context.ServiceRecords
             .Include(s => s.Car)
+            .ThenInclude(c => c.Customer)
+            .Include(s => s.Customer)
             .Include(s => s.MaintenanceItem)
             .OrderByDescending(s => s.ServiceDate)
             .ToListAsync();

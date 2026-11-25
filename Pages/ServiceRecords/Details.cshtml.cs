@@ -26,6 +26,8 @@ public class DetailsModel : PageModel
 
         var serviceRecord = await _context.ServiceRecords
             .Include(s => s.Car)
+            .ThenInclude(c => c.Customer)
+            .Include(s => s.Customer)
             .Include(s => s.MaintenanceItem)
             .FirstOrDefaultAsync(m => m.Id == id);
 

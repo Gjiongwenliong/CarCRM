@@ -10,6 +10,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Customer</th>
             <th>Car</th>
             <th>Maintenance Item</th>
             <th>Service Date</th>
@@ -23,6 +24,7 @@
     @foreach (var item in Model.ServiceRecords)
     {
         <tr>
+            <td>@(item.Customer?.Name ?? item.Car.Customer?.Name ?? "Not assigned")</td>
             <td>@item.Car.DisplayName</td>
             <td>@item.MaintenanceItem.Name</td>
             <td>@item.ServiceDate.ToShortDateString()</td>

@@ -17,7 +17,38 @@ namespace CarCRM.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
-            modelBuilder.Entity("Car", b =>
+            modelBuilder.Entity("CarCRM.Models.Appointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MaintenanceItemId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Remark")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("MaintenanceItemId");
+
+                    b.ToTable("Appointments");
+                });
+
+            modelBuilder.Entity("CarCRM.Models.Car", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -26,6 +57,9 @@ namespace CarCRM.Migrations
                     b.Property<string>("Brand")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int?>("IdCustomer")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -41,31 +75,9 @@ namespace CarCRM.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdCustomer");
+
                     b.ToTable("Cars");
-                });
-
-            modelBuilder.Entity("CarCRM.Models.Appointment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("CarCRM.Models.Customer", b =>
@@ -130,6 +142,9 @@ namespace CarCRM.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("IdCustomer")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("MaintenanceItemId")
                         .HasColumnType("INTEGER");
 
@@ -145,6 +160,8 @@ namespace CarCRM.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CarId");
+
+                    b.HasIndex("IdCustomer");
 
                     b.HasIndex("MaintenanceItemId");
 
@@ -219,16 +236,35 @@ namespace CarCRM.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CarCRM.Models.MaintenanceItem", "MaintenanceItem")
+                        .WithMany()
+                        .HasForeignKey("MaintenanceItemId");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("MaintenanceItem");
+                });
+
+            modelBuilder.Entity("CarCRM.Models.Car", b =>
+                {
+                    b.HasOne("CarCRM.Models.Customer", "Customer")
+                        .WithMany("Cars")
+                        .HasForeignKey("IdCustomer");
+
                     b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("CarCRM.Models.ServiceRecord", b =>
                 {
-                    b.HasOne("Car", "Car")
+                    b.HasOne("CarCRM.Models.Car", "Car")
                         .WithMany()
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("CarCRM.Models.Customer", "Customer")
+                        .WithMany("ServiceRecords")
+                        .HasForeignKey("IdCustomer");
 
                     b.HasOne("CarCRM.Models.MaintenanceItem", "MaintenanceItem")
                         .WithMany()
@@ -237,6 +273,8 @@ namespace CarCRM.Migrations
                         .IsRequired();
 
                     b.Navigation("Car");
+
+                    b.Navigation("Customer");
 
                     b.Navigation("MaintenanceItem");
                 });
@@ -266,6 +304,10 @@ namespace CarCRM.Migrations
             modelBuilder.Entity("CarCRM.Models.Customer", b =>
                 {
                     b.Navigation("Appointments");
+
+                    b.Navigation("Cars");
+
+                    b.Navigation("ServiceRecords");
 
                     b.Navigation("Vehicles");
                 });
