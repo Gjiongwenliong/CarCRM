@@ -1,0 +1,38 @@
+@page
+@model CarCRM.Pages.Reminder.IndexModel
+
+<h1>Reminders</h1>
+
+<p>
+    <a asp-page="./Create" class="btn btn-primary">Create New Reminder</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Car</th>
+            <th>Reminder Date</th>
+            <th>Service Item</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Reminders)
+    {
+        <tr>
+            <td>@item.Car?.DisplayName</td>
+            <td>@item.ReminderDate.ToShortDateString()</td>
+            <td>@item.ServiceItem</td>
+            <td>@item.Status</td>
+            <td>@item.Notes</td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

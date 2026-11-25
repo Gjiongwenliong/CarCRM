@@ -16,5 +16,8 @@ namespace CarCRM.Data
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<ServiceRecord> ServiceRecords { get; set; } = null!;
         public DbSet<MaintenanceItem> MaintenanceItems { get; set; }
+        // public DbSet<Appointment> Appointments { get; set; } // Dup
+        //define reminder for future maintenance date DbSet additions
+        public DbSet<Reminder> Reminders { get; set; }
     }
 }

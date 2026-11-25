@@ -180,6 +180,37 @@ namespace CarCRM.Migrations
                     b.ToTable("Vehicles");
                 });
 
+            modelBuilder.Entity("Reminder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ReminderDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ServiceItem")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("Reminders");
+                });
+
             modelBuilder.Entity("CarCRM.Models.Appointment", b =>
                 {
                     b.HasOne("CarCRM.Models.Customer", "Customer")
@@ -219,6 +250,17 @@ namespace CarCRM.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Reminder", b =>
+                {
+                    b.HasOne("Car", "Car")
+                        .WithMany()
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("CarCRM.Models.Customer", b =>

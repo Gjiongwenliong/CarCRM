@@ -1,0 +1,43 @@
+@page
+@model CarCRM.Pages.Reminder.CreateModel
+
+<h1>Create Reminder</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Reminder.CarId"></label>
+        <select asp-for="Reminder.CarId" asp-items="Model.CarList" class="form-control"></select>
+        <span asp-validation-for="Reminder.CarId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reminder.ReminderDate"></label>
+        <input asp-for="Reminder.ReminderDate" class="form-control" type="date" />
+        <span asp-validation-for="Reminder.ReminderDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reminder.ServiceItem"></label>
+        <select asp-for="Reminder.ServiceItem" asp-items="Model.ServiceItemList" class="form-control">
+            <option value="">-- Select Service Item --</option>
+        </select>
+        <span asp-validation-for="Reminder.ServiceItem" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reminder.Status"></label>
+        <select asp-for="Reminder.Status" asp-items="Model.StatusList" class="form-control"></select>
+        <span asp-validation-for="Reminder.Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reminder.Notes"></label>
+        <textarea asp-for="Reminder.Notes" class="form-control"></textarea>
+        <span asp-validation-for="Reminder.Notes" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</form>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0YP7/eGD6pqLysMuG0S7M9zGGJrSW8ZbWMCgPoNjLotM5Zh2a5/R7RkIgKzwkH7HuofSB430NVqqz1adVQKvJg==",
+  "dgSpecHash": "Q9AxHcnV8GQ=",
   "success": true,
-  "projectFilePath": "/home/c2678/project/CarCRM.csproj",
+  "projectFilePath": "/home/c2678/CarCRM/CarCRM.csproj",
   "expectedPackageFiles": [
     "/home/c2678/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/home/c2678/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

@@ -17,119 +17,147 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CarCRM
 build_property.RootNamespace = CarCRM
-build_property.ProjectDir = /home/c2678/project/
+build_property.ProjectDir = /home/c2678/CarCRM/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/c2678/project
+build_property.MSBuildProjectDirectory = /home/c2678/CarCRM
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/c2678/project/Pages/Cars/Create.cshtml]
+[/home/c2678/CarCRM/Pages/Cars/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2Fycy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Cars/Delete.cshtml]
+[/home/c2678/CarCRM/Pages/Cars/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2Fycy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Cars/Details.cshtml]
+[/home/c2678/CarCRM/Pages/Cars/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2Fycy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Cars/Edit.cshtml]
+[/home/c2678/CarCRM/Pages/Cars/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2Fycy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Cars/Index.cshtml]
+[/home/c2678/CarCRM/Pages/Cars/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2Fycy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Customers/create.cshtml]
+[/home/c2678/CarCRM/Pages/Customers/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL2NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Customers/delete.cshtml]
+[/home/c2678/CarCRM/Pages/Customers/delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL2RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Customers/details.cshtml]
+[/home/c2678/CarCRM/Pages/Customers/details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL2RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Customers/edit.cshtml]
+[/home/c2678/CarCRM/Pages/Customers/edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL2VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Customers/index.cshtml]
+[/home/c2678/CarCRM/Pages/Customers/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3VzdG9tZXJzL2luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Error.cshtml]
+[/home/c2678/CarCRM/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Index.cshtml]
+[/home/c2678/CarCRM/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/MaintenanceItems/Create.cshtml]
+[/home/c2678/CarCRM/Pages/MaintenanceItems/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFpbnRlbmFuY2VJdGVtcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/MaintenanceItems/Delete.cshtml]
+[/home/c2678/CarCRM/Pages/MaintenanceItems/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFpbnRlbmFuY2VJdGVtcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/MaintenanceItems/Details.cshtml]
+[/home/c2678/CarCRM/Pages/MaintenanceItems/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFpbnRlbmFuY2VJdGVtcy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/MaintenanceItems/Edit.cshtml]
+[/home/c2678/CarCRM/Pages/MaintenanceItems/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFpbnRlbmFuY2VJdGVtcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/MaintenanceItems/Index.cshtml]
+[/home/c2678/CarCRM/Pages/MaintenanceItems/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWFpbnRlbmFuY2VJdGVtcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Privacy.cshtml]
+[/home/c2678/CarCRM/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/ServiceRecords/Create.cshtml]
+[/home/c2678/CarCRM/Pages/Reminder/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVtaW5kZXIvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/Reminder/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVtaW5kZXIvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/Reminder/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVtaW5kZXIvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/Reminder/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVtaW5kZXIvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/Reminder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVtaW5kZXIvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/ServiceRecords/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlY29yZHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/ServiceRecords/Delete.cshtml]
+[/home/c2678/CarCRM/Pages/ServiceRecords/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlY29yZHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/ServiceRecords/Details.cshtml]
+[/home/c2678/CarCRM/Pages/ServiceRecords/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlY29yZHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/ServiceRecords/Edit.cshtml]
+[/home/c2678/CarCRM/Pages/ServiceRecords/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlY29yZHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/ServiceRecords/Index.cshtml]
+[/home/c2678/CarCRM/Pages/ServiceRecords/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlY29yZHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/home/c2678/CarCRM/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/_ViewImports.cshtml]
+[/home/c2678/CarCRM/Pages/Vehicles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmVoaWNsZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/Vehicles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmVoaWNsZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/c2678/CarCRM/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/_ViewStart.cshtml]
+[/home/c2678/CarCRM/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/c2678/project/Pages/Shared/_Layout.cshtml]
+[/home/c2678/CarCRM/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1tck3z50yn
