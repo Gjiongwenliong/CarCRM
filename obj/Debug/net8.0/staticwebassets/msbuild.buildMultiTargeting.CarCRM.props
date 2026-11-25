@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/CarCRM.props" />
-</Project>
