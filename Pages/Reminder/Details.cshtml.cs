@@ -1,14 +1,15 @@
 using CarCRM.Data;
+using CarCRM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CarCRM.Pages.Reminder;
+namespace CarCRM.Pages.Reminders;
 
 public class DetailsModel(CarCRMContext context) : PageModel
 {
     private readonly CarCRMContext _context = context;
 
-    public global::Reminder Reminder { get; set; } = default!;
+    public CarCRM.Models.Reminder Reminder { get; set; } = default!;
 
     public IActionResult OnGet(int? id)
     {
@@ -19,7 +20,7 @@ public class DetailsModel(CarCRMContext context) : PageModel
 
         try
         {
-            Reminder = global::Reminder.ReadRecord(_context, id.Value);
+            Reminder = global::CarCRM.Models.Reminder.ReadRecord(_context, id.Value);
         }
         catch (InvalidOperationException)
         {

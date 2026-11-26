@@ -1,5 +1,8 @@
 using CarCRM.Data;
+using CarCRM.Models;
 using Microsoft.EntityFrameworkCore;
+
+namespace CarCRM.Models;
 
 public class Reminder
 {

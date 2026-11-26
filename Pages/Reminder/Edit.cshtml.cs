@@ -1,10 +1,11 @@
 using CarCRM.Data;
+using CarCRM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarCRM.Pages.Reminder;
+namespace CarCRM.Pages.Reminders;
 
 public class EditModel(CarCRMContext context) : PageModel
 {
@@ -13,7 +14,7 @@ public class EditModel(CarCRMContext context) : PageModel
     private static readonly string[] StatusOptions = ["Pending", "Completed", "Overdue"];
 
     [BindProperty]
-    public global::Reminder Reminder { get; set; } = default!;
+    public CarCRM.Models.Reminder Reminder { get; set; } = default!;
 
     public SelectList CarList { get; set; } = default!;
     public SelectList ServiceItemList { get; set; } = default!;
@@ -28,7 +29,7 @@ public class EditModel(CarCRMContext context) : PageModel
 
         try
         {
-            Reminder = global::Reminder.ReadRecord(_context, id.Value);
+            Reminder = global::CarCRM.Models.Reminder.ReadRecord(_context, id.Value);
         }
         catch (InvalidOperationException)
         {
@@ -51,7 +52,7 @@ public class EditModel(CarCRMContext context) : PageModel
 
         try
         {
-            global::Reminder.UpdateRecord(_context, Reminder);
+            global::CarCRM.Models.Reminder.UpdateRecord(_context, Reminder);
         }
         catch (InvalidOperationException)
         {

@@ -1,10 +1,11 @@
 using CarCRM.Data;
+using CarCRM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarCRM.Pages.Reminder;
+namespace CarCRM.Pages.Reminders;
 
 public class CreateModel(CarCRMContext context) : PageModel
 {
@@ -13,7 +14,7 @@ public class CreateModel(CarCRMContext context) : PageModel
     private static readonly string[] StatusOptions = ["Pending", "Completed", "Overdue"];
 
     [BindProperty]
-    public global::Reminder Reminder { get; set; } = new()
+    public CarCRM.Models.Reminder Reminder { get; set; } = new()
     {
         ReminderDate = DateTime.Today,
         ServiceItem = string.Empty,
@@ -41,7 +42,7 @@ public class CreateModel(CarCRMContext context) : PageModel
             return Page();
         }
 
-        global::Reminder.CreateRecord(_context, Reminder);
+        global::CarCRM.Models.Reminder.CreateRecord(_context, Reminder);
         return RedirectToPage("./Index");
     }
 

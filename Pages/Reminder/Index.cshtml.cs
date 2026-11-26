@@ -1,16 +1,17 @@
 using CarCRM.Data;
+using CarCRM.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CarCRM.Pages.Reminder;
+namespace CarCRM.Pages.Reminders;
 
 public class IndexModel(CarCRMContext context) : PageModel
 {
     private readonly CarCRMContext _context = context;
 
-    public IList<global::Reminder> Reminders { get; set; } = new List<global::Reminder>();
+    public IList<CarCRM.Models.Reminder> Reminders { get; set; } = new List<CarCRM.Models.Reminder>();
 
     public void OnGet()
     {
-        Reminders = global::Reminder.Index(_context);
+        Reminders = CarCRM.Models.Reminder.Index(_context);
     }
 }
